@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_24_141727) do
+ActiveRecord::Schema.define(version: 2020_06_24_142403) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_141727) do
 
   create_table "photos", force: :cascade do |t|
     t.integer "user_id"
-    t.string "image_id"
+    t.string "image"
     t.string "spot"
     t.string "address_city"
     t.string "address_street"
