@@ -3,7 +3,7 @@
   <div class="user-show-info-wrapper">
     <div class="user-show-prof-image">
       <% if @user.profile_image? %>
-        <%= image_tag @user.image.url %>
+        <%= image_tag @user.profile_image.url %>
       <% else %>
         <%= image_tag "/assets/images/no_image.jpg", :size => '100x100' %>
       <% end %>
