@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="user-show-wrapper">
+  <div class="user-show-slider"></div>
+  <div class="user-show-info-wrapper">
+    <div class="user-show-prof-image">
+      <% if @user.profile_image? %>
+        <%= image_tag @user.profile_image.url %>
+      <% else %>
+        <%= image_tag "/assets/images/no_image.jpg", :size => '100x100' %>
+      <% end %>
+    </div>
+    <div class="user-show-info">
+      <%= @user.name %><br>
+      <%= @user.introduction %>
+      <% if user_signed_in? && @user == current_user %>
+        <%= link_to 'edit', edit_user_path(current_user) %>
+      <% end %>
+    </div>
+    <div class="user-show-photos">
+      <div class="user-show-phto"></div>
+    </div>
+  </div>
+</div>
