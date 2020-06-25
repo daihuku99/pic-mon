@@ -1,2 +1,14 @@
-<h1>Photos#show</h1>
-<p>Find me in app/views/photos/show.html.erb</p>
+<div class="photo-show-wrapper">
+  <div class="photo-show-image">
+    <%= image_tag @photo.image.url, size: '300x300' %>
+  </div>
+  <div class="photo-show-info">
+    <%= @photo.title %>
+    <%= @photo.detail %>
+    <%= @photo.spot %>
+    <% if user_signed_in? && @photo.user == current_user %>
+      <%= link_to 'edit', edit_photo_path(@photo) %>
+      <%= link_to 'delete', photo_path(@photo), method: :delete, "data-confirm" => "Are you sure?" %>
+    <% end %>
+  </div>
+</div>

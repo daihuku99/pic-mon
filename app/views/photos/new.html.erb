@@ -12,8 +12,16 @@
       <%= f.label :spot %>
       <%= f.text_field :spot %>
 
-      <%= f.label :prefecture %>
-      <%= f. %>
+      <%= f.label :prefecture_code %>
+      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, :prompt => "選んで！" %>
+
+      <%= f.label :address_city %>
+      <%= f.text_field :address_city %>
+
+      <%= f.label :address_street %>
+      <%= f.text_field :address_street %>
+
+      <%= f.submit 'Post' %>
     <% end %>
   </div>
 </div>

@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
+    @photo = current_user.photos.new(photo_params)
     @photo.save
     redirect_to photo_path(@photo)
   end
@@ -18,6 +18,14 @@ class PhotosController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @photo.destroy
+    redirect_to photos_path
   end
 
   private
