@@ -13,6 +13,7 @@
       <%= @user.introduction %>
       <% if user_signed_in? && @user == current_user %>
         <%= link_to 'edit', edit_user_path(current_user) %>
+        <%= link_to 'post', new_photo_path %>
       <% end %>
     </div>
     <div class="user-show-photos">
