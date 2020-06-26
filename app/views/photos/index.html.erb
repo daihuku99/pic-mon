@@ -1,2 +1,14 @@
-<h1>Photos#index</h1>
-<p>Find me in app/views/photos/index.html.erb</p>
+<div class="photo-index-wrapper">
+  <div class="photo-index-photos">
+    <% @photos.each do |photo| %>
+      <div class="photo-index-photo">
+        <div class="photo-index-photo-image">
+          <%= image_tag photo.image.url, size: '200x200' %>
+        </div>
+        <div class="photo-index-photo-title">
+          <%= link_to photo.title, photo_path(photo) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

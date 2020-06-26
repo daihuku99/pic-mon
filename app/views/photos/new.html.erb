@@ -1,2 +1,27 @@
-<h1>Photos#new</h1>
-<p>Find me in app/views/photos/new.html.erb</p>
+<div class="photo-new-wrapper">
+  <div class="photo-new-form">
+    <%= form_with model: @photo, local: true do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :detail %>
+      <%= f.text_area :detail %>
+
+      <%= f.file_field :image %>
+
+      <%= f.label :spot %>
+      <%= f.text_field :spot %>
+
+      <%= f.label :prefecture_code %>
+      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, :prompt => "選んで！" %>
+
+      <%= f.label :address_city %>
+      <%= f.text_field :address_city %>
+
+      <%= f.label :address_street %>
+      <%= f.text_field :address_street %>
+
+      <%= f.submit 'Post' %>
+    <% end %>
+  </div>
+</div>

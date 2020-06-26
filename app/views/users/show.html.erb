@@ -3,7 +3,7 @@
   <div class="user-show-info-wrapper">
     <div class="user-show-prof-image">
       <% if @user.profile_image? %>
-        <%= image_tag @user.profile_image.url %>
+        <%= image_tag @user.profile_image.url, size: '100x100' %>
       <% else %>
         <%= image_tag "/assets/images/no_image.jpg", :size => '100x100' %>
       <% end %>
@@ -13,6 +13,7 @@
       <%= @user.introduction %>
       <% if user_signed_in? && @user == current_user %>
         <%= link_to 'edit', edit_user_path(current_user) %>
+        <%= link_to 'post', new_photo_path %>
       <% end %>
     </div>
     <div class="user-show-photos">
