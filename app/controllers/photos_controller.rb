@@ -21,6 +21,8 @@ class PhotosController < ApplicationController
   end
 
   def update
+    @photo.update(photo_params)
+    redirect_to photo_path(@photo)
   end
 
   def destroy

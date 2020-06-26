@@ -6,7 +6,7 @@
           <%= image_tag photo.image.url, size: '200x200' %>
         </div>
         <div class="photo-index-photo-title">
-          <%= photo.title %>
+          <%= link_to photo.title, photo_path(photo) %>
         </div>
       </div>
     <% end %>
