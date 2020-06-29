@@ -19,10 +19,12 @@
             <% end %>
             <td><%= link_to user.name, user_path(user) %></td>
             <td><%= user.introduction %></td>
-            <% if user_signed_in? && current_user.following?(user) %>
-              <td><%= link_to 'unfollow', unfollow_path(user), method: :post %></td>
-            <% else %>
-              <td><%= link_to 'follow', follow_path(user), method: :post %></td>
+            <% if user != current_user %>
+              <% if user_signed_in? && current_user.following?(user) %>
+                <td><%= link_to 'unfollow', unfollow_path(user), method: :post %></td>
+              <% else %>
+                <td><%= link_to 'follow', follow_path(user), method: :post %></td>
+              <% end %>
             <% end %>
           </tr>
         <% end %>

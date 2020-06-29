@@ -11,6 +11,8 @@
     <div class="user-show-info">
       <%= @user.name %><br>
       <%= @user.introduction %>
+      <p>following:<%= @user.follower.count %></p>
+      <p>follower:<%= @user.followed.count %></p>
       <% if user_signed_in? && @user == current_user %>
         <%= link_to 'edit', edit_user_path(current_user) %>
         <%= link_to 'post', new_photo_path %>
