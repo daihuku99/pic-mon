@@ -6,6 +6,11 @@
     <%= @photo.title %>
     <%= @photo.detail %>
     <%= @photo.spot %>
+    <% if @photo.liked_by?(current_user) %>
+      <%= link_to 'liked', photo_likes_path(@photo), method: :delete %>
+    <% else %>
+      <%= link_to 'like', photo_likes_path(@photo), method: :post %>
+    <% end %>
     <% if user_signed_in? && @photo.user == current_user %>
       <%= link_to 'edit', edit_photo_path(@photo) %>
       <%= link_to 'delete', photo_path(@photo), method: :delete, "data-confirm" => "Are you sure?" %>
