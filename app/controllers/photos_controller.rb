@@ -15,6 +15,8 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @photo.comments
   end
 
   def edit

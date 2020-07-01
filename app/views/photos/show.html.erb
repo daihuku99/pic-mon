@@ -11,6 +11,20 @@
     <% else %>
       <%= link_to 'like', photo_likes_path(@photo), method: :post %>
     <% end %>
+    <div class="photo-show-comment-form">
+      <% if user_signed_in? %>
+        <%= form_with model: @comment, url: photo_comments_path(@photo), method: :post, local: true do |f| %>
+          <%= f.text_area :comment %>
+          <%= f.submit 'Create Comment' %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="photo-show-comment-index">
+      <% @comments.each do |comment| %>
+        <%= comment.comment %>
+        <%= comment.user.name %>
+      <% end %>
+    </div>
     <% if user_signed_in? && @photo.user == current_user %>
       <%= link_to 'edit', edit_photo_path(@photo) %>
       <%= link_to 'delete', photo_path(@photo), method: :delete, "data-confirm" => "Are you sure?" %>
