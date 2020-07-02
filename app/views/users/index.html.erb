@@ -15,7 +15,7 @@
             <% if user.profile_image? %>
               <td><%= image_tag user.profile_image.url, size: '100x100' %></td>
             <% else %>
-              <td><%= image_tag "/assets/images/no_image.jpg", :size => '100x100' %></td>
+              <td><%= image_tag "/assets/no_image.jpg", :size => '100x100' %></td>
             <% end %>
             <td><%= link_to user.name, user_path(user) %></td>
             <td><%= user.introduction %></td>
