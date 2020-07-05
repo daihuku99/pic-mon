@@ -1,3 +1,12 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.homes-top-slider {
+  margin: 100px auto;
+  height: 500px;
+  width: 70%;
+  background-image: url("kourijima112.jpg");
+  background-size: cover;
+}
