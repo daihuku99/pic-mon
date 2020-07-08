@@ -9,8 +9,21 @@
   margin: 0 auto;
 }
 
+.homes-top-logo-wrapper {
+  margin: 0 auto;
+}
+
+.homes-top-logo {
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #D7EEFF;
+  -webkit-text-fill-color: white;
+}
+
 .homes-top-photos {
-  margin: 100px auto;
+  margin: 0 auto;
   height: 300px;
   width: 90%;
 }
