@@ -3,8 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.homes-top-slider {
+.homes-top-wrapper {
+  width: 80%;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.homes-top-photos {
   margin: 100px auto;
-  height: 500px;
-  width: 70%;
+  height: 300px;
+  width: 90%;
+}
+
+.homes-top-photo {
+  width: 20%;
+  height: 100%;
+  float: left;
 }
