@@ -3,10 +3,52 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.homes-top-wrapper {
+  width: 80%;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.homes-top-logo-wrapper {
+  margin: 0 auto;
+}
+
+.homes-top-logo {
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #D7EEFF;
+  -webkit-text-fill-color: white;
+}
+
+.homes-top-slider-wrapper {
+  margin: 0 auto;
+  height: 300px;
+  width: 800px;
+  overflow: hidden;
+}
+
 .homes-top-slider {
-  margin: 100px auto;
-  height: 500px;
-  width: 70%;
-  background-image: url("kourijima112.jpg");
-  background-size: cover;
+  width: 500%;
+  position: relative;
+  left: 0;
+  will-change: transform;
+  animation: slider 20s infinite;
+}
+
+.homes-top-slide {
+  width: 800px;
+  height: 300px;
+  float: left;
+  position: relative;
+}
+
+@keyframes slider {
+  0% { trasform: translateX(0); }
+  20% { transform: translateX(-800px); }
+  40% { transform: translateX(-1600px); }
+  60% { transform: translateX(-2400px); }
+  80% { transform: translateX(-3200px); }
+  100% { transform: translateX(0); }
 }
