@@ -9,6 +9,12 @@
   padding-left: 390px;
 }
 
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .user-show-prof-image {
   float: left;
 }
@@ -21,4 +27,8 @@
 .user-show-info {
   float: left;
   width: 90px;
+}
+
+.user-show-photos {
+  text-align: center;
 }
