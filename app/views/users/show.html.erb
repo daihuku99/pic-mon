@@ -1,25 +1,34 @@
-<div class="user-show-wrapper">
-  <div class="user-show-slider"></div>
-  <div class="user-show-info-wrapper">
-    <div class="user-show-prof-image">
-      <% if @user.profile_image? %>
-        <%= image_tag @user.profile_image.url, size: '100x100' %>
-      <% else %>
-        <%= image_tag "/assets/no_image.jpg", :size => '100x100' %>
-      <% end %>
+<div class="container">
+  <div class="user-show-wrapper">
+    <div class="user-show-slider"></div>
+    <div class="user-show-info-wrapper col-xs-5">
+      <div class="clearfix">
+        <div class="user-show-prof-image">
+          <% if @user.profile_image? %>
+            <%= image_tag @user.profile_image.url, size: '300x300', class: 'prof-image' %>
+          <% else %>
+            <%= image_tag "/assets/no_image.jpg", :size => '300x300', class: 'prof-image' %>
+          <% end %>
+        </div>
+        <div class="user-show-info">
+          <%= @user.name %><br>
+          <%= @user.introduction %>
+          <p>following:<%= @user.follower.count %></p>
+          <p>follower:<%= @user.followed.count %></p>
+          <% if user_signed_in? && @user == current_user %>
+            <%= link_to 'edit', edit_user_path(current_user) %>
+            <%= link_to 'post', new_photo_path %>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="user-show-info">
-      <%= @user.name %><br>
-      <%= @user.introduction %>
-      <p>following:<%= @user.follower.count %></p>
-      <p>follower:<%= @user.followed.count %></p>
-      <% if user_signed_in? && @user == current_user %>
-        <%= link_to 'edit', edit_user_path(current_user) %>
-        <%= link_to 'post', new_photo_path %>
+    <div class="user-show-photos col-xs-7">
+      <% @user.photos.each do |photo| %>
+        <div class="user-show-phto">
+          <%= image_tag photo.image.url, size: '100x100' %>
+          <%= photo.title %>
+        </div>
       <% end %>
-    </div>
-    <div class="user-show-photos">
-      <div class="user-show-phto"></div>
     </div>
   </div>
 </div>

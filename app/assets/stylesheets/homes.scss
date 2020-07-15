@@ -52,3 +52,25 @@
   80% { transform: translateX(-3200px); }
   100% { transform: translateX(0); }
 }
+
+.homes-top-links {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.homes-top-link {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.homes-top-link-login {
+  background-color: #66CCCC;
+}
+
+.homes-top-link-signup {
+  background-color: #33CCFF;
+}
+
