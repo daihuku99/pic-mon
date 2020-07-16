@@ -1,14 +1,13 @@
 <div class="container">
-  <div class="photo-index-wrapper">
-    <div class="photo-index-photos">
+  <div class="row">
+    <h2 class="photo-index-topic">Photo Timeline</h2>
+    <div class="row">
       <% @photos.each do |photo| %>
-        <div class="photo-index-photo">
-          <div class="photo-index-photo-image">
-            <%= image_tag photo.image.url, size: '200x200' %>
-          </div>
-          <div class="photo-index-photo-title">
-            <%= link_to photo.title, photo_path(photo) %>
-          </div>
+        <div class="col-xs-4 col-xs-offset-2">
+          <%= image_tag photo.image.url, size: '100x100' %>
+        </div>
+        <div class="col-xs-4 center-block">
+          <h4><%= link_to photo.title, photo_path(photo) %></h4>
         </div>
       <% end %>
     </div>
