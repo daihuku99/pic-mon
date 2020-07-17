@@ -2,14 +2,31 @@
   <div class="row">
     <h2 class="photo-index-topic">Photo Timeline</h2>
     <div class="row">
-      <% @photos.each do |photo| %>
-        <div class="col-xs-4 col-xs-offset-2">
-          <%= image_tag photo.image.url, size: '100x100' %>
-        </div>
-        <div class="col-xs-4 center-block">
-          <h4><%= link_to photo.title, photo_path(photo) %></h4>
-        </div>
-      <% end %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><h4>Photo</h4></th>
+            <th><h4>Title</h4></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th colspan="5"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @photos.each do |photo| %>
+          <tr>
+            <td><%= image_tag photo.image.url, size: '100x100' %></td>
+            <td><h4><%= link_to photo.title, photo_path(photo) %></h4></td>
+            <td><%= photo.likes.count %>likes</td>
+            <td><%= photo.comments.count %>comments</td>
+            <% if user_signed_in? && photo.user == current_user %>
+              <td><%= link_to 'edit', edit_photo_path(photo) %></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
