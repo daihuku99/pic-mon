@@ -21,6 +21,8 @@
           <%= f.text_area :comment %>
           <%= f.submit 'Create Comment' %>
         <% end %>
+      <% else %>
+        <%= link_to 'comment', new_user_session_path %>
       <% end %>
     </div>
     <div class="photo-show-comment-index">
