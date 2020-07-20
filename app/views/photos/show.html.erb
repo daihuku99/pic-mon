@@ -5,8 +5,8 @@
       <%= image_tag @photo.image.url, size: '300x300' %>
     </div>
     <div class="photo-show-info">
-      <%= @photo.title %>
-      <%= @photo.detail %>
+      <h5><%= @photo.title %></h5><br>
+      <%= @photo.detail %><br>
       <%= @photo.spot %>
       <% if user_signed_in? %>
         <% if @photo.liked_by?(current_user) %>
